@@ -1,5 +1,12 @@
 import React from 'react';
 
-const AppFooterView = () => <footer>Footer</footer>;
+import Logo from '../Logo/Logo';
+
+const AppFooterView = () => (
+  <footer>
+    <div>Footer</div>
+    <Logo theme="footer" />
+  </footer>
+);
 
 export default AppFooterView;
