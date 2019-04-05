@@ -1,0 +1,13 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  font-size: 22px;
+}
+
+.phoneIcon svg {
+  width: 25px;
+}

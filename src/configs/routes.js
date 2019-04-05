@@ -5,4 +5,5 @@ export default Object.freeze({
   CONTACT: '/contact',
   ABOUT: '/about',
   DELIVERY: '/delivery',
+  CART: '/cart',
 });

@@ -11,6 +11,7 @@ import ContactPage from '../pages/ContactPage';
 import AboutPage from '../pages/AboutPage';
 import WatchesPage from '../pages/WatchesPage';
 import DeliveryPage from '../pages/DeliveryPage';
+import CartPage from '../pages/CartPage';
 
 class App extends Component {
   state = {};
@@ -26,6 +27,7 @@ class App extends Component {
           <Route exact path={routes.ABOUT} component={AboutPage} />
           <Route exact path={routes.WATCHES} component={WatchesPage} />
           <Route exact path={routes.DELIVERY} component={DeliveryPage} />
+          <Route exact path={routes.CART} component={CartPage} />
 
           <Redirect to="/" />
         </Switch>

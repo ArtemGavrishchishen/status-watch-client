@@ -1,0 +1,13 @@
+.user {
+  width: 20px;
+  height: 20px;
+}
+
+.user svg {
+  fill: #ffffff;
+}
+
+.user svg:hover,
+.user svg:focus {
+  fill: rgb(0, 174, 255);
+}

@@ -1,0 +1,35 @@
+.headerTop {
+  height: 40px;
+  background-color: #2a5f7f;
+  margin-bottom: 15px;
+}
+
+.headerContainer {
+  display: flex;
+  max-width: 1024px;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.headerIcon {
+  display: flex;
+  width: 50px;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.headerBody {
+  height: 70px;
+  background-color: #ffffff;
+}
+
+.headerBody .headerContainer {
+  align-items: flex-end;
+}
+
+.phoneBlock {
+  align-self: flex-start;
+}
