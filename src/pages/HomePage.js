@@ -1,8 +1,10 @@
 import React from 'react';
 
+import SimpleSlider from '../components/SimpleSlider/SimpleSlider';
+
 const HomePage = () => (
   <div>
-    <h1>HomePage</h1>
+    <SimpleSlider />
   </div>
 );
 

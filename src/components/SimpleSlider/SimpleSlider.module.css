@@ -1,0 +1,34 @@
+.simpleSlider {
+  height: 325px;
+  background: #2a5f7f;
+  background: radial-gradient(#269ec3, #2a5f7f);
+}
+
+.simpleSliderContainer {
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sliderItem {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+}
+
+.sliderItemContent {
+  max-width: 500px;
+  height: 100%;
+}
+
+.sliderItemBtn {
+  display: inline-block;
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
