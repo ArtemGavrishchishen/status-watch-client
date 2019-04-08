@@ -32,3 +32,8 @@
   background-color: #ffffff;
   cursor: pointer;
 }
+
+.simpleSlideImg {
+  width: auto;
+  height: 100%;
+}

@@ -8,7 +8,6 @@ import styles from './SimpleSlider.module.css';
 
 const settings = {
   dots: true,
-  fade: true,
   arrows: false,
   infinite: true,
   speed: 500,

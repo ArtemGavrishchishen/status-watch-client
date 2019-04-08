@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  width: 240px;
+  padding: 20px;
+  border: 1px solid;
+}
+
+.mark,
+.zoom {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  top: 5px;
+}
+
+.mark {
+  left: 5px;
+}
+
+.zoom {
+  right: 5px;
+}
+
+.watchImg {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
