@@ -1,0 +1,14 @@
+.social {
+  display: flex;
+  width: 208px;
+  height: 100%;
+}
+
+.link {
+  margin: 0 5px;
+}
+
+.social svg {
+  width: 25px;
+  height: 25px;
+}

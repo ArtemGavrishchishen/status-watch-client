@@ -1,0 +1,61 @@
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.top {
+  background-color: #818181;
+  height: 100px;
+}
+
+.top .container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.nav {
+  margin-right: auto;
+}
+
+.nav ul {
+  font-size: 13px;
+  width: 100px;
+  flex-direction: column;
+}
+
+.nav a {
+  border-bottom: 2px solid transparent;
+}
+
+.share {
+  margin-right: auto;
+}
+
+.shareTitle {
+  color: #ffffff;
+  text-align: center;
+  font-style: italic;
+}
+
+.phone {
+  width: 285px;
+  text-align: right;
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+.bottom {
+  height: 25px;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #717171;
+}

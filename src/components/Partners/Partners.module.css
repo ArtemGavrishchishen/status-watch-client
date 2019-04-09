@@ -1,5 +1,5 @@
-.popularModels {
-  margin-bottom: 20px;
+.partners {
+  background-color: #dbdbdb;
 }
 
 .container {
@@ -10,9 +10,12 @@
 
 .list {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  height: 125px;
+}
+
+img {
+  width: auto;
+  height: 100%;
 }

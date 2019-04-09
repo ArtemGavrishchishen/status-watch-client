@@ -12,7 +12,7 @@
   width: 90%;
   height: 10px;
   margin: 0 auto;
-  border: 4px solid;
+  border: 4px solid #00a2ff;
 }
 
 .logo::before {
@@ -25,14 +25,12 @@
   border-top: 0;
 }
 
-.logoHeader::after,
-.logoHeader::before {
-  border-color: #00a2ff;
+.logoHeader {
+  color: #000000;
 }
 
-.logoFooter::after,
-.logoFooter::before {
-  border-color: #979393;
+.logoFooter {
+  color: #ffffff;
 }
 
 .logoTitle {
