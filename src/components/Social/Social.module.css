@@ -5,7 +5,14 @@
 }
 
 .link {
+  height: 25px;
   margin: 0 5px;
+  transition: box-shadow 0.2s linear;
+}
+
+.link:hover,
+.link:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .social svg {
