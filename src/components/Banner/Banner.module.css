@@ -1,0 +1,37 @@
+.banner {
+  height: 250px;
+  background-color: #2a5f7f;
+  background-image: linear-gradient(
+      to right,
+      rgba(42, 95, 127, 0.9),
+      rgba(42, 95, 127, 0.9)
+    ),
+    url(./assets/watch.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.content p {
+  margin: 0;
+  padding: 0;
+}
+
+.content p:first-child {
+  margin-bottom: 15px;
+}

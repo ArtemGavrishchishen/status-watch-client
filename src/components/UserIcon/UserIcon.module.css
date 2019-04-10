@@ -5,6 +5,7 @@
 
 .user svg {
   fill: #ffffff;
+  transition: fill 0.2s linear;
 }
 
 .user svg:hover,

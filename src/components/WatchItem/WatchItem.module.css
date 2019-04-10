@@ -1,8 +1,15 @@
-.container {
+.item {
   position: relative;
   width: 240px;
   padding: 20px;
-  border: 1px solid;
+  border: 2px solid #f4f4f4;
+  border-radius: 5px;
+  transition: border 0.2s linear;
+}
+
+.item:hover,
+.item:focus {
+  border-color: rgb(0, 174, 255);
 }
 
 .mark,
@@ -26,4 +33,41 @@
   width: 80%;
   height: auto;
   margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.model {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.prise {
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+  color: #2a5f7f;
+  margin-bottom: 15px;
+}
+
+.btn {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: inline-block;
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  background-color: #2a5f7f;
+  cursor: pointer;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: background-color 0.2s linear;
+}
+
+.item:hover .btn,
+.item:focus .btn {
+  background-color: rgb(0, 174, 255);
 }

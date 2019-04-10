@@ -18,15 +18,15 @@ const settings = {
 const init = [
   {
     id: 1,
-    slideTitle: 'Casio Edifice EQB-501XBL-2AER',
-    slideDescription:
+    title: 'Casio Edifice EQB-501XBL-2AER',
+    description:
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
     imgSrc: img,
   },
   {
     id: 2,
-    slideTitle: 'Casio Edifice EQB-501XBL-2AER',
-    slideDescription:
+    title: 'Casio Edifice EQB-501XBL-2AER',
+    description:
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.',
     imgSrc: img,
   },
@@ -36,7 +36,7 @@ const SimpleSlider = ({ items = init }) => (
   <>
     {items.length !== 0 && (
       <div className={styles.simpleSlider}>
-        <div className={styles.simpleSliderContainer}>
+        <div className={styles.container}>
           <Slider {...settings}>
             {items.map(item => (
               <SliderItem key={item.id} {...item} />

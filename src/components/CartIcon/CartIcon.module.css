@@ -5,6 +5,7 @@
 
 .cart svg {
   fill: #ffffff;
+  transition: fill 0.2s linear;
 }
 
 .cart svg:hover,

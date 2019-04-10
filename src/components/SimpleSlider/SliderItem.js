@@ -4,24 +4,24 @@ import styles from './SimpleSlider.module.css';
 
 const SliderItem = ({
   id,
-  slideTitle = '',
-  slideDescription = '',
+  title = '',
+  description = '',
   imgSrc = '',
   imgAlt = '',
 }) => (
-  <div className={styles.sliderItem}>
-    <div className={styles.sliderItemContent}>
-      <h3 className={styles.sliderItemTitle}>{slideTitle}</h3>
-      <p className={styles.sliderItemDesc}>{slideDescription}</p>
+  <div className={styles.item}>
+    <div className={styles.content}>
+      <h3 className={styles.title}>{title}</h3>
+      <p className={styles.description}>{description}</p>
       <button
-        className={styles.sliderItemBtn}
+        className={styles.btn}
         type="button"
         onClick={() => console.log('click', id)}
       >
         More
       </button>
     </div>
-    <img className={styles.simpleSlideImg} src={imgSrc} alt={imgAlt} />
+    <img className={styles.slideImg} src={imgSrc} alt={imgAlt} />
   </div>
 );
 
