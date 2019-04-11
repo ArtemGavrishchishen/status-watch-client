@@ -15,8 +15,8 @@
 .mark,
 .zoom {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   text-align: center;
   top: 5px;
 }
@@ -25,8 +25,43 @@
   left: 5px;
 }
 
+.mark svg {
+  fill: transparent;
+}
+
+.hit svg {
+  fill: #63cadd;
+}
+.new svg {
+  fill: #a0d06a;
+}
+.sale svg {
+  fill: #f9674e;
+}
+
+.markerText {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-weight: 700;
+  font-style: italic;
+}
+
 .zoom {
   right: 5px;
+  cursor: pointer;
+}
+
+.zoom svg {
+  fill: #f4f4f4;
+  transition: fill 0.2s linear;
+}
+
+.item:hover .zoom svg,
+.item:focus .zoom svg {
+  fill: rgb(0, 174, 255);
 }
 
 .watchImg {

@@ -10,7 +10,6 @@ const Logo = ({ theme = '' }) => {
   if (theme === 'footer') {
     logoClasses.push(styles.logoFooter);
   }
-
   return (
     <div className={logoClasses.join(' ')}>
       <div className={styles.logoTitle}>Status watch</div>

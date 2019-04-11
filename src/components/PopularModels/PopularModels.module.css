@@ -8,6 +8,10 @@
   padding: 0 15px;
 }
 
+.title {
+  text-transform: uppercase;
+}
+
 .list {
   display: flex;
   align-items: center;

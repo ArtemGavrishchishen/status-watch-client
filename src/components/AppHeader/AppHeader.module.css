@@ -34,6 +34,8 @@
   align-items: flex-end;
 }
 
-.phoneBlock {
+.phone {
   align-self: flex-start;
+  color: #2a5f7f;
+  fill: #2a5f7f;
 }

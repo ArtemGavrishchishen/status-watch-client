@@ -6,16 +6,16 @@ export default [
     path: routes.MAIN,
   },
   {
+    name: 'Watches',
+    path: routes.WATCHES,
+  },
+  {
     name: 'Contacts',
     path: routes.CONTACT,
   },
   {
     name: 'About',
     path: routes.ABOUT,
-  },
-  {
-    name: 'Watches',
-    path: routes.WATCHES,
   },
   {
     name: 'Delivery',

@@ -5,9 +5,9 @@ import WatchItem from '../WatchItem/WatchItem';
 import styles from './PopularModels.module.css';
 
 const PopularModels = ({ items = [1, 2, 3, 4] }) => (
-  <section className={styles.popularModels}>
+  <div className={styles.popularModels}>
     <div className={styles.container}>
-      <h3>Popular Models</h3>
+      <h3 className={styles.title}>Popular Models</h3>
       <ul className={styles.list}>
         {items.map(item => (
           <li key={item}>
@@ -16,7 +16,7 @@ const PopularModels = ({ items = [1, 2, 3, 4] }) => (
         ))}
       </ul>
     </div>
-  </section>
+  </div>
 );
 
 export default PopularModels;

@@ -6,3 +6,24 @@
   padding: 0;
   width: 475px;
 }
+
+.item {
+  position: relative;
+}
+
+.icons {
+  position: absolute;
+  left: 50%;
+  top: -80%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+.icons svg {
+  fill: rgb(0, 174, 255);
+}
+
+.content {
+  text-align: center;
+}

@@ -28,7 +28,7 @@ const AppHeaderView = () => (
       <div className={styles.headerContainer}>
         <Logo theme="header" />
         <AdvantagesList />
-        <div className={styles.phoneBlock}>
+        <div className={styles.phone}>
           <PhoneBlock />
         </div>
       </div>
