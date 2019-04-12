@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from 'react-slick';
 
 import SliderItem from './SliderItem';
-import img from './assets/test.png';
 
 import styles from './SimpleSlider.module.css';
 
@@ -15,24 +14,7 @@ const settings = {
   autoplaySpeed: 4000,
 };
 
-const init = [
-  {
-    id: 1,
-    title: 'Casio Edifice EQB-501XBL-2AER',
-    description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
-    imgSrc: img,
-  },
-  {
-    id: 2,
-    title: 'Casio Edifice EQB-501XBL-2AER',
-    description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.',
-    imgSrc: img,
-  },
-];
-
-const SimpleSlider = ({ items = init }) => (
+const SimpleSlider = ({ items }) => (
   <>
     {items.length !== 0 && (
       <div className={styles.simpleSlider}>

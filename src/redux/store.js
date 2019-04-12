@@ -4,9 +4,11 @@ import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import { watchesReducer } from './watches';
+import { sharesReducer } from './shares';
 
 const rootReducer = combineReducers({
   watches: watchesReducer,
+  shares: sharesReducer,
 });
 
 const logger = createLogger();
