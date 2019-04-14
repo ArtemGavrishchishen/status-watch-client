@@ -5,30 +5,32 @@ import { ReactComponent as Zoom } from './assets/zoom.svg';
 
 import styles from './WatchItem.module.css';
 
-const WatchItem = ({ marker = 'hit' }) => {
+const WatchItem = ({ label, brand, model, price }) => {
   const markerClasses = [styles.mark];
-  if (marker === 'hit') {
+  if (label === 'hit') {
     markerClasses.push(styles.hit);
   }
-  if (marker === 'new') {
+  if (label === 'new') {
     markerClasses.push(styles.new);
   }
-  if (marker === 'sale') {
+  if (label === 'sale') {
     markerClasses.push(styles.sale);
   }
   return (
     <div className={styles.item}>
       <div className={markerClasses.join(' ')}>
         <Mark />
-        <span className={styles.markerText}>{marker}</span>
+        <span className={styles.markerText}>{label}</span>
       </div>
       <div className={styles.zoom}>
         <Zoom />
       </div>
-      <img className={styles.watchImg} src={img} alt="alt" />
-      <div className={styles.model}>Casio Edifice EQB-501XBL-2AER</div>
-      <div className={styles.prise}>30,000.00</div>
-      {marker === 'sale' ? null : (
+      <img className={styles.watchImg} src={img} alt={brand} />
+      <div className={styles.model}>
+        {brand} {model}
+      </div>
+      <div className={styles.prise}>{price}.00 USD</div>
+      {label === 'sale' ? null : (
         <button type="button" className={styles.btn}>
           Buy
         </button>

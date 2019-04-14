@@ -7,7 +7,7 @@ import Banner from '../components/Banner/Banner';
 import Partners from '../components/Partners/Partners';
 
 import { sharesSelectors, sharesOperations } from '../redux/shares';
-import { watchesOperations } from '../redux/watches';
+import { watchesSelectors, watchesOperations } from '../redux/watches';
 
 import styles from './HomePage.module.css';
 
@@ -21,14 +21,14 @@ class HomePage extends Component {
   }
 
   render() {
-    const { shares } = this.props;
+    const { shares, hitWatches } = this.props;
     return (
       <main>
         <section className={styles.slider}>
           <SimpleSlider items={shares} />
         </section>
         <section className={styles.popular}>
-          <PopularModels />
+          <PopularModels items={hitWatches} />
         </section>
         <section className={styles.banner}>
           <Banner />
@@ -43,6 +43,7 @@ class HomePage extends Component {
 
 const mapStateToProps = state => ({
   shares: sharesSelectors.getSharesItems(state),
+  hitWatches: watchesSelectors.getFourHitWathes(state),
 });
 
 const mapDispatchToProps = {
