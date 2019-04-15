@@ -1,11 +1,11 @@
 import React from 'react';
-import img from '../SimpleSlider/assets/test.png'; // delete
+
 import { ReactComponent as Mark } from './assets/mark.svg';
 import { ReactComponent as Zoom } from './assets/zoom.svg';
 
 import styles from './WatchItem.module.css';
 
-const WatchItem = ({ label, brand, model, price }) => {
+const WatchItem = ({ label, brand, model, price, img }) => {
   const markerClasses = [styles.mark];
   if (label === 'hit') {
     markerClasses.push(styles.hit);
@@ -25,7 +25,7 @@ const WatchItem = ({ label, brand, model, price }) => {
       <div className={styles.zoom}>
         <Zoom />
       </div>
-      <img className={styles.watchImg} src={img} alt={brand} />
+      <img className={styles.watchImg} src={img[0]} alt={brand} />
       <div className={styles.model}>
         {brand} {model}
       </div>
