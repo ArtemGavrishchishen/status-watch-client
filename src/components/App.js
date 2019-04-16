@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 import routes from '../configs/routes';
 
+import ModalAuth from './ModalAuth/ModalAuth';
 import AppHeader from './AppHeader/AppHeader';
 import AppFooter from './AppFooter/AppFooter';
 
@@ -19,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <ModalAuth />
         <AppHeader />
 
         <Switch>

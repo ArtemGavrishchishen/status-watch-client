@@ -5,10 +5,12 @@ import thunk from 'redux-thunk';
 
 import { watchesReducer } from './watches';
 import { sharesReducer } from './shares';
+import { modalReducer } from './modal';
 
 const rootReducer = combineReducers({
   watches: watchesReducer,
   shares: sharesReducer,
+  modalIsOpen: modalReducer,
 });
 
 const logger = createLogger();
