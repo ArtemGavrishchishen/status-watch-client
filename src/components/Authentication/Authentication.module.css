@@ -1,8 +1,11 @@
 .tabsBtn {
   text-align: center;
+  margin-bottom: 25px;
 }
 .button {
   background-color: #2a5f7f;
+  font-size: 16px;
+  font-weight: 700;
   color: #ffffff;
   padding: 8px 30px;
   width: 50%;

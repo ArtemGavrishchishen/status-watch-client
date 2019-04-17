@@ -30,22 +30,29 @@ export default class SignIn extends Component {
     const { email, password } = this.state;
     return (
       <form className={styles.form} onSubmit={this.handleSubmitForm}>
-        <input
-          className={styles.input}
-          type="text"
-          name="email"
-          value={email}
-          onChange={this.handleChangeInput}
-          placeholder="Email"
-        />
-        <input
-          className={styles.input}
-          type="password"
-          name="password"
-          value={password}
-          onChange={this.handleChangeInput}
-          placeholder="Password"
-        />
+        <ul className={styles.list}>
+          <li className={styles.item}>
+            <input
+              className={styles.input}
+              type="text"
+              name="email"
+              value={email}
+              onChange={this.handleChangeInput}
+              placeholder="EMAIL"
+            />
+          </li>
+          <li className={styles.item}>
+            <input
+              className={styles.input}
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleChangeInput}
+              placeholder="PASSWORD"
+            />
+          </li>
+        </ul>
+
         <button className={styles.btn} type="submit">
           Sign In
         </button>

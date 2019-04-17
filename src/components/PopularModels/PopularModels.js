@@ -8,8 +8,8 @@ const PopularModels = ({ items = [] }) => (
   <div className={styles.popularModels}>
     <div className={styles.container}>
       <h3 className={styles.title}>Popular Models</h3>
+      <WatchesGrid items={items} />
     </div>
-    <WatchesGrid items={items} />
   </div>
 );
 
