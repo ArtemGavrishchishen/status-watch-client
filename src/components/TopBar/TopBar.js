@@ -5,6 +5,8 @@ import queryString from 'query-string';
 import Selected from '../Selected/Selected';
 import Pagination from '../Pagination/Pagination';
 
+import styles from './TopBar.module.css';
+
 const optionsSort = [
   { value: 'hit', label: 'sorted by hit' },
   { value: 'new', label: 'sorted by new' },
@@ -69,7 +71,7 @@ class TopBar extends Component {
     const { location } = this.props;
     const parsed = queryString.parse(location.search);
     return (
-      <>
+      <div className={styles.bar}>
         <Selected
           selectedOption={getSelectedOption(parsed.sort, optionsSort)}
           handleChange={this.onSortChange}
@@ -83,7 +85,7 @@ class TopBar extends Component {
           placeholder="View by ..."
         />
         <Pagination />
-      </>
+      </div>
     );
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import LeftBar from '../components/LeftBar/LeftBar';
 import TopBar from '../components/TopBar/TopBar';
 import WatchesGrid from '../components/WatchesGrid/WatchesGrid';
 
@@ -22,7 +23,10 @@ class WatchesPage extends Component {
       <main>
         <div className={styles.container}>
           <div className={styles.watchesPage}>
-            <div className={styles.leftBar}>1</div>
+            <div className={styles.leftBar}>
+              <LeftBar />
+            </div>
+
             <div className={styles.content}>
               <div className={styles.topBar}>
                 <TopBar />
