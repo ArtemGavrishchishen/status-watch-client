@@ -1,0 +1,17 @@
+.callCenter {
+  width: 210px;
+  color: #818181;
+}
+
+.time {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #717171;
+}
+
+.saturday,
+.sunday {
+  display: flex;
+  justify-content: space-between;
+}
