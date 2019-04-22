@@ -27,17 +27,17 @@ class TopBar extends Component {
 
   onSortChange = selected => {
     const { history, location } = this.props;
-    const parsed = queryString.parse(location.search);
+    const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
     let stringified;
 
     if (selected !== null) {
       parsed.sort = selected.value;
-      stringified = queryString.stringify(parsed);
+      stringified = queryString.stringify(parsed, { arrayFormat: 'comma' });
     }
 
     if (selected === null) {
       const { sort, ...newParsed } = parsed;
-      stringified = queryString.stringify(newParsed);
+      stringified = queryString.stringify(newParsed, { arrayFormat: 'comma' });
     }
 
     history.push({
@@ -48,17 +48,17 @@ class TopBar extends Component {
 
   onViewChange = selected => {
     const { history, location } = this.props;
-    const parsed = queryString.parse(location.search);
+    const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
     let stringified;
 
     if (selected !== null) {
       parsed.view = selected.value;
-      stringified = queryString.stringify(parsed);
+      stringified = queryString.stringify(parsed, { arrayFormat: 'comma' });
     }
 
     if (selected === null) {
       const { view, ...newParsed } = parsed;
-      stringified = queryString.stringify(newParsed);
+      stringified = queryString.stringify(newParsed, { arrayFormat: 'comma' });
     }
 
     history.push({
@@ -69,7 +69,7 @@ class TopBar extends Component {
 
   render() {
     const { location } = this.props;
-    const parsed = queryString.parse(location.search);
+    const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
     return (
       <div className={styles.bar}>
         <Selected

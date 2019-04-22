@@ -8,10 +8,22 @@ import CheckBoxColor from '../CheckBoxColor/CheckBoxColor';
 
 import styles from './LeftBar.module.css';
 
-// const removeCheckFromItems = (items, value) => {
-//   const newItems = items.filter(item => item !== value);
-//   return newItems;
-// };
+const toggleCheckFromItems = (items, value) => {
+  if (Array.isArray(items)) {
+    return items.includes(value)
+      ? items.filter(item => item !== value)
+      : [...items, value];
+  }
+  if (!Array.isArray(items)) {
+    return items.includes(value) ? [] : [items, value];
+  }
+  return items;
+};
+
+const getSelectedItems = (location, value) => {
+  const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
+  return Array.isArray(parsed[value]) ? parsed[value] : [parsed[value]];
+};
 
 class LeftBar extends Component {
   state = {
@@ -20,17 +32,21 @@ class LeftBar extends Component {
   };
 
   handleCheckBoxChange = ({ target }) => {
-    console.log(target.name);
-    console.log(target.value);
     const { history, location } = this.props;
-    const parsed = queryString.parse(location.search);
+    const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
+
+    if (parsed[target.name]) {
+      parsed[target.name] = toggleCheckFromItems(
+        parsed[target.name],
+        target.value,
+      );
+    }
 
     if (!parsed[target.name]) {
-      parsed[target.name] = [];
-      parsed[target.name] = [...parsed[target.name], target.value];
+      parsed[target.name] = target.value;
     }
-    console.log(parsed);
-    const stringified = queryString.stringify(parsed);
+
+    const stringified = queryString.stringify(parsed, { arrayFormat: 'comma' });
 
     history.push({
       pathname: location.pathname,
@@ -40,6 +56,7 @@ class LeftBar extends Component {
 
   render() {
     const { count, products } = this.state;
+    const { location } = this.props;
     return (
       <div className={styles.bar}>
         <div className={styles.title}>Filter</div>
@@ -59,19 +76,27 @@ class LeftBar extends Component {
               </li>
               <li className={styles.item}>
                 <div className={styles.itemTitle}>Gender</div>
-                <CheckBoxGender />
+                <CheckBoxGender
+                  items={['test_1', 'test_2', 'test_3']}
+                  selectedItems={getSelectedItems(location, 'gender')}
+                  handleChange={this.handleCheckBoxChange}
+                />
               </li>
               <li className={styles.item}>
                 <div className={styles.itemTitle}>Brand</div>
                 <CheckBoxBrand
                   items={['test_1', 'test_2', 'test_3']}
-                  selectedItems={['test_2']}
+                  selectedItems={getSelectedItems(location, 'brand')}
                   handleChange={this.handleCheckBoxChange}
                 />
               </li>
               <li className={styles.item}>
                 <div className={styles.itemTitle}>Color</div>
-                <CheckBoxColor />
+                <CheckBoxColor
+                  items={['test_1', 'test_2', 'test_3']}
+                  selectedItems={getSelectedItems(location, 'color')}
+                  handleChange={this.handleCheckBoxChange}
+                />
               </li>
             </ul>
           </form>
