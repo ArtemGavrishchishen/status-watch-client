@@ -1,8 +1,7 @@
-const getWatchesItems = state => state.watches;
+const getWatchesItems = state => state.data.watches;
 
 const getFourHitWathes = state =>
   getWatchesItems(state)
-    .filter(watch => watch.label === 'hit')
     .sort(() => 0.5 - Math.random())
     .slice(0, 4);
 

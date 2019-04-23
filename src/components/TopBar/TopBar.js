@@ -47,18 +47,20 @@ class TopBar extends Component {
   };
 
   onViewChange = selected => {
-    const { history, location } = this.props;
+    const { history, location, fetch } = this.props;
     const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
     let stringified;
 
     if (selected !== null) {
       parsed.view = selected.value;
       stringified = queryString.stringify(parsed, { arrayFormat: 'comma' });
+      fetch(parsed);
     }
 
     if (selected === null) {
       const { view, ...newParsed } = parsed;
       stringified = queryString.stringify(newParsed, { arrayFormat: 'comma' });
+      fetch(newParsed);
     }
 
     history.push({

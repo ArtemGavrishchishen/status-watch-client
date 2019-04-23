@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import queryString from 'query-string';
 
 import LeftBar from '../components/LeftBar/LeftBar';
 import TopBar from '../components/TopBar/TopBar';
@@ -13,12 +14,14 @@ class WatchesPage extends Component {
   state = {};
 
   componentDidMount() {
-    const { fetchWatches } = this.props;
-    fetchWatches();
+    const { fetchWatches, location } = this.props;
+    const parsed = queryString.parse(location.search);
+
+    fetchWatches(parsed);
   }
 
   render() {
-    const { watches } = this.props;
+    const { watches, fetchWatches } = this.props;
     return (
       <main>
         <div className={styles.container}>
@@ -29,7 +32,7 @@ class WatchesPage extends Component {
 
             <div className={styles.content}>
               <div className={styles.topBar}>
-                <TopBar />
+                <TopBar fetch={fetchWatches} />
               </div>
               <WatchesGrid items={watches} />
             </div>

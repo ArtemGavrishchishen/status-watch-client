@@ -48,7 +48,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchShares: sharesOperations.fetchSharesItems,
-  fetchWatches: watchesOperations.fetchWatchesItems,
+  fetchWatches: watchesOperations.fetchHitWatchesItems,
 };
 
 export default connect(

@@ -7,8 +7,9 @@ const fetchSharesItems = () => async dispatch => {
   dispatch(actions.fetchSharesRequest());
 
   try {
-    const response = await axios.get();
+    const response = await axios.get('/shares');
     const { data } = response;
+
     if (data.status === 'success')
       dispatch(actions.fetchSharesSuccess(data.shares));
   } catch (error) {
