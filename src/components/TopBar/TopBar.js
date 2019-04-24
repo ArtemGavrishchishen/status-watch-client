@@ -51,6 +51,10 @@ class TopBar extends Component {
     const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
     let stringified;
 
+    if (parsed.page) {
+      parsed.page = 1;
+    }
+
     if (selected !== null) {
       parsed.view = selected.value;
       stringified = queryString.stringify(parsed, { arrayFormat: 'comma' });

@@ -1,8 +1,21 @@
-const getWatchesItems = state => state.data.watches;
+const getWatchesItems = state => state.watches.all;
+const getHitWatchesItems = state => state.watches.hit;
+
+const getWatchesParamsGender = state => state.watches.params.gender;
+const getWatchesParamsBrand = state => state.watches.params.brand;
+const getWatchesParamsColor = state => state.watches.params.color;
+const getWatchesParamsMaxPage = state => state.watches.params.pageCount;
 
 const getFourHitWathes = state =>
-  getWatchesItems(state)
+  getHitWatchesItems(state)
     .sort(() => 0.5 - Math.random())
     .slice(0, 4);
 
-export default { getWatchesItems, getFourHitWathes };
+export default {
+  getWatchesItems,
+  getFourHitWathes,
+  getWatchesParamsGender,
+  getWatchesParamsBrand,
+  getWatchesParamsColor,
+  getWatchesParamsMaxPage,
+};

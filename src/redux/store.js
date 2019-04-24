@@ -8,7 +8,7 @@ import { sharesReducer } from './shares';
 import { modalReducer } from './modal';
 
 const rootReducer = combineReducers({
-  data: watchesReducer,
+  watches: watchesReducer,
   shares: sharesReducer,
   modalIsOpen: modalReducer,
 });

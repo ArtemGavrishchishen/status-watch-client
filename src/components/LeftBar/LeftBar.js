@@ -56,7 +56,7 @@ class LeftBar extends Component {
 
   render() {
     const { count, products } = this.state;
-    const { location } = this.props;
+    const { location, params } = this.props;
     return (
       <div className={styles.bar}>
         <div className={styles.title}>Filter</div>
@@ -77,7 +77,7 @@ class LeftBar extends Component {
               <li className={styles.item}>
                 <div className={styles.itemTitle}>Gender</div>
                 <CheckBoxGender
-                  items={['test_1', 'test_2', 'test_3']}
+                  items={params.gender}
                   selectedItems={getSelectedItems(location, 'gender')}
                   handleChange={this.handleCheckBoxChange}
                 />
@@ -85,7 +85,7 @@ class LeftBar extends Component {
               <li className={styles.item}>
                 <div className={styles.itemTitle}>Brand</div>
                 <CheckBoxBrand
-                  items={['test_1', 'test_2', 'test_3']}
+                  items={params.brand}
                   selectedItems={getSelectedItems(location, 'brand')}
                   handleChange={this.handleCheckBoxChange}
                 />
@@ -93,7 +93,7 @@ class LeftBar extends Component {
               <li className={styles.item}>
                 <div className={styles.itemTitle}>Color</div>
                 <CheckBoxColor
-                  items={['test_1', 'test_2', 'test_3']}
+                  items={params.color}
                   selectedItems={getSelectedItems(location, 'color')}
                   handleChange={this.handleCheckBoxChange}
                 />

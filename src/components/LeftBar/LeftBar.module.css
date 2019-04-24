@@ -54,4 +54,13 @@
 
 .item {
   padding: 0 15px;
+  margin-bottom: 25px;
+}
+
+.itemTitle {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }

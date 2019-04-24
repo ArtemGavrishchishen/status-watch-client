@@ -1,4 +1,51 @@
 .pagination {
+  display: flex;
   width: 240px;
-  border: 1px solid grey;
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  fill: #2a5f7f;
+  transition: fill 0.2s linear;
+  cursor: pointer;
+}
+
+.arrow a {
+  outline: none;
+}
+
+.arrow:hover,
+.arrow:focus {
+  fill: rgb(0, 174, 255);
+}
+
+.prev {
+  composes: arrow;
+  margin-right: auto;
+}
+
+.next {
+  composes: arrow;
+  margin-left: auto;
+}
+
+.item {
+  min-width: 20px;
+  cursor: pointer;
+  text-align: center;
+  color: #2a5f7f;
+}
+
+.item:not(:last-child) {
+  margin-right: 4px;
+}
+
+.active {
+  color: #ffffff;
+  background-color: #2a5f7f;
 }

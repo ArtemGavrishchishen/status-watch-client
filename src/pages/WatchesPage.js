@@ -21,23 +21,25 @@ class WatchesPage extends Component {
   }
 
   render() {
-    const { watches, fetchWatches } = this.props;
+    const { watches, params, fetchWatches } = this.props;
     return (
       <main>
-        <div className={styles.container}>
-          <div className={styles.watchesPage}>
-            <div className={styles.leftBar}>
-              <LeftBar />
-            </div>
-
-            <div className={styles.content}>
-              <div className={styles.topBar}>
-                <TopBar fetch={fetchWatches} />
+        <section className={styles.watches}>
+          <div className={styles.container}>
+            <div className={styles.watchesPage}>
+              <div className={styles.leftBar}>
+                <LeftBar params={params} />
               </div>
-              <WatchesGrid items={watches} />
+
+              <div className={styles.content}>
+                <div className={styles.topBar}>
+                  <TopBar fetch={fetchWatches} />
+                </div>
+                <WatchesGrid items={watches} />
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
     );
   }
@@ -45,6 +47,11 @@ class WatchesPage extends Component {
 
 const mapStateToProps = state => ({
   watches: watchesSelectors.getWatchesItems(state),
+  params: {
+    gender: watchesSelectors.getWatchesParamsGender(state),
+    brand: watchesSelectors.getWatchesParamsBrand(state),
+    color: watchesSelectors.getWatchesParamsColor(state),
+  },
 });
 
 const mapDispatchToProps = {
