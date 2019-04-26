@@ -1,0 +1,29 @@
+.noWatches {
+  text-align: center;
+  margin-bottom: 600px;
+}
+
+.table {
+  width: 100%;
+}
+
+.thead {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 2px solid #818181;
+}
+
+.products {
+  width: 40%;
+}
+
+.price {
+  width: 20%;
+}
+.count {
+  width: 20%;
+}
+.cost {
+  width: 20%;
+}
