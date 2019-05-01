@@ -1,6 +1,6 @@
-const siteURL =
-  process.env.NODE_ENV !== 'production'
-    ? 'http://localhost:8080'
-    : 'https://fierce-shelf-21173.herokuapp.com';
+const siteURL = 'https://fierce-shelf-21173.herokuapp.com';
+
+// dev -     'http://localhost:8080'
+// prop  -   'https://fierce-shelf-21173.herokuapp.com'
 
 export default siteURL;
