@@ -1,7 +1,9 @@
 import axios from 'axios';
 import actions from './watchesActions';
 
-axios.defaults.baseURL = 'http://localhost:8080';
+import siteURL from '../../configs/siteURL';
+
+axios.defaults.baseURL = siteURL;
 
 const fetchWatchesItems = qs => async dispatch => {
   dispatch(actions.fetchWatchesRequest());

@@ -1,7 +1,9 @@
 import axios from 'axios';
 import actions from './sharesActions';
 
-axios.defaults.baseURL = 'http://localhost:8080';
+import siteURL from '../../configs/siteURL';
+
+axios.defaults.baseURL = siteURL;
 
 const fetchSharesItems = () => async dispatch => {
   dispatch(actions.fetchSharesRequest());

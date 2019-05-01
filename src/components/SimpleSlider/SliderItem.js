@@ -1,5 +1,7 @@
 import React from 'react';
 
+import siteURL from '../../configs/siteURL';
+
 import styles from './SimpleSlider.module.css';
 
 const SliderItem = ({
@@ -21,7 +23,11 @@ const SliderItem = ({
         More
       </button>
     </div>
-    <img className={styles.slideImg} src={imgSrc} alt={imgAlt} />
+    <img
+      className={styles.slideImg}
+      src={`${siteURL}/${imgSrc}`}
+      alt={imgAlt}
+    />
   </div>
 );
 

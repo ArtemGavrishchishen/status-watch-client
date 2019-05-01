@@ -1,5 +1,7 @@
 import React from 'react';
 
+import siteURL from '../../configs/siteURL';
+
 import { ReactComponent as Mark } from './assets/mark.svg';
 import { ReactComponent as Zoom } from './assets/zoom.svg';
 
@@ -25,7 +27,11 @@ const WatchItem = ({ label, brand, model, price, img }) => {
       <div className={styles.zoom}>
         <Zoom />
       </div>
-      <img className={styles.watchImg} src={img[0]} alt={brand} />
+      <img
+        className={styles.watchImg}
+        src={`${siteURL}/${img[0]}`}
+        alt={brand}
+      />
       <div className={styles.model}>
         {brand} {model}
       </div>
