@@ -51,6 +51,8 @@ const mapStateToProps = state => ({
     gender: watchesSelectors.getWatchesParamsGender(state),
     brand: watchesSelectors.getWatchesParamsBrand(state),
     color: watchesSelectors.getWatchesParamsColor(state),
+    minPrice: watchesSelectors.getWatchesParamsMinPrice(state),
+    maxPrice: watchesSelectors.getWatchesParamsMaxPrice(state),
   },
 });
 

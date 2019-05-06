@@ -1,11 +1,40 @@
 .list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .item {
-  width: 40px;
+  border: 2px solid #f4f4f4;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.selected {
+  composes: item;
+  border-color: rgb(0, 174, 255);
+}
+
+.label {
+  display: block;
+  min-width: 60px;
+  padding: 3px 0px;
+  cursor: pointer;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

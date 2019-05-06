@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
+import InputRange from 'react-input-range';
 
 import CheckBoxGender from '../CheckBoxGender/CheckBoxGender';
 import CheckBoxBrand from '../CheckBoxBrand/CheckBoxBrand';
 import CheckBoxColor from '../CheckBoxColor/CheckBoxColor';
 
 import styles from './LeftBar.module.css';
+import 'react-input-range/lib/css/index.css';
 
 const toggleCheckFromItems = (items, value) => {
   if (Array.isArray(items)) {
@@ -54,6 +56,41 @@ class LeftBar extends Component {
     });
   };
 
+  handlePriceRangeChange = range => {
+    const { history, location } = this.props;
+    const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
+
+    parsed.minPrice = range.min;
+    parsed.maxPrice = range.max;
+
+    const stringified = queryString.stringify(parsed, { arrayFormat: 'comma' });
+
+    history.push({
+      pathname: location.pathname,
+      search: stringified,
+    });
+  };
+
+  getPriceRange = () => {
+    const { location, params } = this.props;
+    const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
+
+    const value = {
+      min: Number(params.minPrice),
+      max: Number(params.maxPrice),
+    };
+
+    if (parsed.minPrice) {
+      value.min = Number(parsed.minPrice);
+    }
+
+    if (parsed.maxPrice) {
+      value.max = Number(parsed.maxPrice);
+    }
+
+    return value;
+  };
+
   render() {
     const { count, products } = this.state;
     const { location, params } = this.props;
@@ -73,6 +110,12 @@ class LeftBar extends Component {
             <ul className={styles.list}>
               <li className={styles.item}>
                 <div className={styles.itemTitle}>Price, USD</div>
+                <InputRange
+                  maxValue={params.maxPrice}
+                  minValue={params.minPrice}
+                  value={this.getPriceRange()}
+                  onChange={value => this.handlePriceRangeChange(value)}
+                />
               </li>
               <li className={styles.item}>
                 <div className={styles.itemTitle}>Gender</div>

@@ -5,9 +5,13 @@ import styles from './CheckBoxGender.module.css';
 const CheckBoxGender = ({ items = [], selectedItems = [], handleChange }) => (
   <ul className={styles.list}>
     {items.map(item => (
-      <li className={styles.item} key={item}>
-        <label>
+      <li
+        className={selectedItems.includes(item) ? styles.selected : styles.item}
+        key={item}
+      >
+        <label className={styles.label}>
           <input
+            className={styles.hidden}
             type="checkbox"
             name="gender"
             onChange={handleChange}

@@ -62,11 +62,33 @@ function pageCountReducer(state = 1, { type, payload }) {
   }
 }
 
+function minPriceReducer(state = 0, { type, payload }) {
+  switch (type) {
+    case types.FETCH_SUCCESS:
+      return payload.minPrice;
+
+    default:
+      return state;
+  }
+}
+
+function maxPriceReducer(state = 10000000, { type, payload }) {
+  switch (type) {
+    case types.FETCH_SUCCESS:
+      return payload.maxPrice;
+
+    default:
+      return state;
+  }
+}
+
 const paramsReducer = combineReducers({
   gender: genderReducer,
   brand: brandReducer,
   color: colorReducer,
   pageCount: pageCountReducer,
+  minPrice: minPriceReducer,
+  maxPrice: maxPriceReducer,
 });
 
 const watchesReducer = combineReducers({
