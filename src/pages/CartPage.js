@@ -1,23 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Cart from '../components/Cart/Cart';
+
+import { watchesSelectors, watchesOperations } from '../redux/watches';
 
 import styles from './CartPage.module.css';
 
 const test = [
-  { id: 1, brand: 2, model: 3, img: 4, price: 5, amount: 6 },
-  { id: 11, brand: 22, model: 33, img: 44, price: 55, amount: 66 },
+  {
+    id: 'm-18463-615',
+    amount: 1,
+  },
+  {
+    id: 'm-02561-360',
+    amount: 3,
+  },
+  {
+    id: 'm-02605-830',
+    amount: 2,
+  },
 ];
 
-const CartPage = () => (
-  <main>
-    <section className={styles.cart}>
-      <div className={styles.container}>
-        <h2>Placing an order</h2>
-        <Cart watshes={test} />
-      </div>
-    </section>
-  </main>
-);
+class CartPage extends Component {
+  state = {};
 
-export default CartPage;
+  componentDidMount() {
+    const { fetchWatches } = this.props;
+
+    fetchWatches();
+  }
+
+  render() {
+    return (
+      <main>
+        <section className={styles.cart}>
+          <div className={styles.container}>
+            <h2>Placing an order</h2>
+            <Cart watshes={test} />
+          </div>
+        </section>
+      </main>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  watches: watchesSelectors.getWatchesItems(state),
+});
+
+const mapDispatchToProps = {
+  fetchWatches: watchesOperations.fetchWatchesItems,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CartPage);

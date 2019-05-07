@@ -7,6 +7,9 @@ const getWatchesParamsColor = state => state.watches.params.color;
 const getWatchesParamsMaxPage = state => state.watches.params.pageCount;
 const getWatchesParamsMinPrice = state => state.watches.params.minPrice;
 const getWatchesParamsMaxPrice = state => state.watches.params.maxPrice;
+const getWatchesParamsCountAll = state => state.watches.params.countAll;
+const getWatchesParamsFilteredCount = state =>
+  state.watches.params.filteredCount;
 
 const getFourHitWathes = state =>
   getHitWatchesItems(state)
@@ -22,4 +25,6 @@ export default {
   getWatchesParamsMaxPage,
   getWatchesParamsMinPrice,
   getWatchesParamsMaxPrice,
+  getWatchesParamsCountAll,
+  getWatchesParamsFilteredCount,
 };

@@ -7,7 +7,7 @@ import { ReactComponent as Zoom } from './assets/zoom.svg';
 
 import styles from './WatchItem.module.css';
 
-const WatchItem = ({ label, brand, model, price, img }) => {
+const WatchItem = ({ id, label, brand, model, price, img, add }) => {
   const markerClasses = [styles.mark];
   if (label === 'hit') {
     markerClasses.push(styles.hit);
@@ -37,7 +37,7 @@ const WatchItem = ({ label, brand, model, price, img }) => {
       </div>
       <div className={styles.prise}>{price}.00 USD</div>
       {label === 'sale' ? null : (
-        <button type="button" className={styles.btn}>
+        <button type="button" className={styles.btn} onClick={() => add(id)}>
           Buy
         </button>
       )}

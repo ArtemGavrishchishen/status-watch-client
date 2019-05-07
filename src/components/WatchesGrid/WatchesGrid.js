@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WatchItem from '../WatchItem/WatchItem';
+import WatchItem from '../WatchItem/WatchItemContainer';
 
 import styles from './WatchesGrid.module.css';
 

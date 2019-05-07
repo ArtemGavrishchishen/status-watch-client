@@ -17,7 +17,7 @@ const toggleCheckFromItems = (items, value) => {
       : [...items, value];
   }
   if (!Array.isArray(items)) {
-    return items.includes(value) ? [] : [items, value];
+    return items === value ? [] : [items, value];
   }
   return items;
 };
@@ -29,12 +29,11 @@ const getSelectedItems = (location, value) => {
 
 class LeftBar extends Component {
   state = {
-    count: '',
-    products: '',
+    priceRange: false,
   };
 
   handleCheckBoxChange = ({ target }) => {
-    const { history, location } = this.props;
+    const { history, location, fetch } = this.props;
     const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
 
     if (parsed[target.name]) {
@@ -48,7 +47,18 @@ class LeftBar extends Component {
       parsed[target.name] = target.value;
     }
 
-    const stringified = queryString.stringify(parsed, { arrayFormat: 'comma' });
+    let stringified;
+
+    if (!parsed.page) {
+      stringified = queryString.stringify(parsed, { arrayFormat: 'comma' });
+    }
+
+    if (parsed.page) {
+      const { page, ...newParsed } = parsed;
+      stringified = queryString.stringify(newParsed, { arrayFormat: 'comma' });
+    }
+
+    fetch(parsed);
 
     history.push({
       pathname: location.pathname,
@@ -57,14 +67,14 @@ class LeftBar extends Component {
   };
 
   handlePriceRangeChange = range => {
-    const { history, location } = this.props;
+    const { history, location, params } = this.props;
     const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
 
-    parsed.minPrice = range.min;
-    parsed.maxPrice = range.max;
+    parsed.minPrice = range.min < params.minPrice ? params.minPrice : range.min;
+    parsed.maxPrice = range.max > params.maxPrice ? params.maxPrice : range.max;
 
     const stringified = queryString.stringify(parsed, { arrayFormat: 'comma' });
-
+    this.setState({ priceRange: true });
     history.push({
       pathname: location.pathname,
       search: stringified,
@@ -91,8 +101,28 @@ class LeftBar extends Component {
     return value;
   };
 
+  handleResetForm = () => {
+    const { history, location, fetch } = this.props;
+
+    fetch();
+
+    history.push({
+      pathname: location.pathname,
+    });
+  };
+
+  handleFetchPriceRange = () => {
+    const { location, fetch } = this.props;
+
+    const parsed = queryString.parse(location.search, { arrayFormat: 'comma' });
+
+    fetch(parsed);
+
+    this.setState({ priceRange: false });
+  };
+
   render() {
-    const { count, products } = this.state;
+    const { priceRange } = this.state;
     const { location, params } = this.props;
     return (
       <div className={styles.bar}>
@@ -100,12 +130,20 @@ class LeftBar extends Component {
         <div className={styles.content}>
           <form className={styles.form}>
             <div className={styles.header}>
-              <div
-                className={styles.counter}
-              >{`${count} products from ${products}`}</div>
-              <button type="button" className={styles.btn}>
-                x
-              </button>
+              {params.filteredCount !== params.countAll && (
+                <div>
+                  <div className={styles.counter}>
+                    {params.filteredCount} products from {params.countAll}
+                  </div>
+                  <button
+                    type="button"
+                    className={styles.btn}
+                    onClick={this.handleResetForm}
+                  >
+                    x
+                  </button>
+                </div>
+              )}
             </div>
             <ul className={styles.list}>
               <li className={styles.item}>
@@ -116,6 +154,15 @@ class LeftBar extends Component {
                   value={this.getPriceRange()}
                   onChange={value => this.handlePriceRangeChange(value)}
                 />
+                {priceRange && (
+                  <button
+                    type="button"
+                    className={styles.btnPrice}
+                    onClick={this.handleFetchPriceRange}
+                  >
+                    View
+                  </button>
+                )}
               </li>
               <li className={styles.item}>
                 <div className={styles.itemTitle}>Gender</div>

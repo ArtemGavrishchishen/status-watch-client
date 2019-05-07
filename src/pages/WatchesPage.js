@@ -28,7 +28,7 @@ class WatchesPage extends Component {
           <div className={styles.container}>
             <div className={styles.watchesPage}>
               <div className={styles.leftBar}>
-                <LeftBar params={params} />
+                <LeftBar params={params} fetch={fetchWatches} />
               </div>
 
               <div className={styles.content}>
@@ -53,6 +53,8 @@ const mapStateToProps = state => ({
     color: watchesSelectors.getWatchesParamsColor(state),
     minPrice: watchesSelectors.getWatchesParamsMinPrice(state),
     maxPrice: watchesSelectors.getWatchesParamsMaxPrice(state),
+    countAll: watchesSelectors.getWatchesParamsCountAll(state),
+    filteredCount: watchesSelectors.getWatchesParamsFilteredCount(state),
   },
 });
 

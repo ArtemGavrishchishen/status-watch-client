@@ -12,6 +12,7 @@
   cursor: pointer;
   border: 0px;
   outline: 0px;
+  border-radius: 0 25px 0 25px;
 }
 .active {
   composes: button;
