@@ -3,24 +3,10 @@ import { connect } from 'react-redux';
 
 import Cart from '../components/Cart/Cart';
 
-import { watchesSelectors, watchesOperations } from '../redux/watches';
+import { watchesOperations } from '../redux/watches';
+import { cartSelectors } from '../redux/cart';
 
 import styles from './CartPage.module.css';
-
-const test = [
-  {
-    id: 'm-18463-615',
-    amount: 1,
-  },
-  {
-    id: 'm-02561-360',
-    amount: 3,
-  },
-  {
-    id: 'm-02605-830',
-    amount: 2,
-  },
-];
 
 class CartPage extends Component {
   state = {};
@@ -32,12 +18,13 @@ class CartPage extends Component {
   }
 
   render() {
+    const { watches } = this.props;
     return (
       <main>
         <section className={styles.cart}>
           <div className={styles.container}>
             <h2>Placing an order</h2>
-            <Cart watshes={test} />
+            <Cart items={watches} />
           </div>
         </section>
       </main>
@@ -46,7 +33,7 @@ class CartPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  watches: watchesSelectors.getWatchesItems(state),
+  watches: cartSelectors.getCartWatches(state),
 });
 
 const mapDispatchToProps = {

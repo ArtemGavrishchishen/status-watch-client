@@ -27,3 +27,17 @@
 .cost {
   width: 20%;
 }
+
+.row td {
+  padding: 15px 0;
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+  height: 150px;
+}
+
+.productInfo img {
+  margin-right: 40px;
+}
