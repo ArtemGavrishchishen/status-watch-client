@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Cart from '../components/Cart/Cart';
+import Cart from '../components/Cart/CartContainer';
 
 import { watchesOperations } from '../redux/watches';
 import { cartSelectors } from '../redux/cart';
@@ -23,7 +23,6 @@ class CartPage extends Component {
       <main>
         <section className={styles.cart}>
           <div className={styles.container}>
-            <h2>Placing an order</h2>
             <Cart items={watches} />
           </div>
         </section>

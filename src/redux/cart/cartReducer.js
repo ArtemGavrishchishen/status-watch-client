@@ -22,6 +22,18 @@ function amountReducers(state = {}, { type, payload }) {
         [payload]: state[payload] ? state[payload] + 1 : 1,
       };
 
+    case types.DECREMENT_FROM_CART:
+      return {
+        ...state,
+        [payload]: state[payload] ? state[payload] - 1 : 0,
+      };
+
+    case types.REMOVE_FROM_CART: {
+      const { [payload]: _, ...newState } = state;
+
+      return newState;
+    }
+
     default:
       return state;
   }

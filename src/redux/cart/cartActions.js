@@ -5,6 +5,11 @@ const addToCart = id => ({
   payload: id,
 });
 
+const decrementAmountFromCart = id => ({
+  type: types.DECREMENT_FROM_CART,
+  payload: id,
+});
+
 const removeFromCart = id => ({
   type: types.REMOVE_FROM_CART,
   payload: id,
@@ -12,5 +17,6 @@ const removeFromCart = id => ({
 
 export default {
   addToCart,
+  decrementAmountFromCart,
   removeFromCart,
 };

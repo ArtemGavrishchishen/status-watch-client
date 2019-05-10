@@ -1,7 +1,9 @@
 const ADD_TO_CART = 'cart/ADD_TO_CART';
+const DECREMENT_FROM_CART = 'cart/DECREMENT_FROM_CART';
 const REMOVE_FROM_CART = 'cart/REMOVE_FROM_CART';
 
 export default {
   ADD_TO_CART,
+  DECREMENT_FROM_CART,
   REMOVE_FROM_CART,
 };
